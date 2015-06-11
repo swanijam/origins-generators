@@ -40,8 +40,7 @@ def main(root):
     
     # Write the header to start.
     w.writerow(HEADER)
-    
-    # Generate 100 uninteresting facts.
+
     for path in os.listdir(root):
         w.writerow((
             path,

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Generate output and diff it with the expected output. The exit code
+# defines whether the diff was clean or not.
+./delimited-schema testing/test_input.csv | diff testing/test_output.csv - > /dev/null
+if [ $? = 0 ]; then
+    echo Output matches.
+else
+    echo Output does not match!
+fi

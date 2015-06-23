@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# NOTE: this file (and 'delimited') use relative paths. Make sure to 
+# run this script from origins_generators/generators/delimited/.
+
+# Generate new output and compare it with the expected output file. 
+# A diff will not work because the facts may not be generated in 
+# the same order each time. (generator uses dictionaries)
+rm -f testing/test_output.csv
+./delimited testing/test_input.csv >> testing/test_output.csv
+./testing/compare_test_output.py
